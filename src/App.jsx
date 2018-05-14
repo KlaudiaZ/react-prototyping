@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Menu from './components/Menu';
+import Icon from './components/Icon';
+import User from './components/User';
 
 class App extends Component {
   render() {
@@ -139,8 +143,19 @@ class App extends Component {
                 </div>
             </div>
         </div>
+        <Header>
+            <Menu assign="left">
+                <Icon type="search" />            
+                <Icon type="notification" />
+                <Icon type="message" />
+            </Menu>
+            <Menu assign="right">
+                <User />
+                <User>Username</User>
+            </Menu>
+        </Header>
     </div>
-
+    
     );
   }
 }
