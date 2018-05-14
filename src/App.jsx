@@ -5,6 +5,13 @@ import Header from './components/Header';
 import Menu from './components/Menu';
 import Icon from './components/Icon';
 import User from './components/User';
+import Breadcrumbs from './components/Breadcrumbs';
+import Content from './components/Content';
+import Table from './components/Table';
+import Form from './components/Form';
+import TableHead from './components/TableHead';
+import TableBody from './components/TableBody';
+import TableRow from './components/TableRow';
 
 class App extends Component {
   render() {
@@ -83,7 +90,8 @@ class App extends Component {
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card">
-                            <div class="card-header"><strong>User</strong><small> Form</small></div>
+                            <div class="card-header">
+                                <strong>User</strong><small> Form</small></div>
                             <div class="card-body card-block">
                             <div class="form-group"><label for="company" class=" form-control-label">Name</label><input type="text" id="company" placeholder="Enter your company name" class="form-control" /></div>
                             <div class="form-group"><label for="vat" class=" form-control-label">VAT</label><input type="text" id="vat" placeholder="DE1234567890" class="form-control" /></div>
@@ -154,6 +162,18 @@ class App extends Component {
                 <User>Username</User>
             </Menu>
         </Header>
+        <Breadcrumbs currentDir="Users" previousDir="Dashboard" />
+        <Content>
+            <Form title="User" />
+            <Table title="Users">
+                <TableHead headers={["#", "First", "Last", "Handle"]} />
+                <TableBody>
+                    <TableRow number="1" content={["Mark", "Otto", "@mdo"]} />
+                    <TableRow number="2" content={["Jacob", "Thornton", "@fat"]} />
+                    <TableRow number="3" content={["Larry", "the Bird", "@twitter"]} />
+                </TableBody>
+            </Table>
+        </Content>
     </div>
     
     );
